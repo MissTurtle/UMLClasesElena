@@ -36,11 +36,11 @@ Event <|-- Conference
 Event <|-- BoardMeeting
 Person <|-- Member
 Member <|-- BoardMember
-AAUOC o-- Person
-AAUOC o-- Event
-AAUOC o-- Location
-Person -- Conference
-Member -- Event
-BoardMember -- BoardMeeting
-Location -- Event
+AAUOC o-- "0..*" Person
+AAUOC o-- "0..*" Event
+AAUOC o-- "0..*" Location
+Person "0..*" -- "0..*" Conference : attendsTo
+Member "0..*" -- "0..*" Event : attendsTo
+BoardMember "0..*" -- "0..*" BoardMeeting : attendsTo
+Location "1" -- "0..*" Event : isLocatedIn
 @enduml
