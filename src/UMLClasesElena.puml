@@ -23,4 +23,15 @@ class Person{
 class AAUOC{
 
 }
+Event <|-- Conference
+Event <|-- BoardMeeting
+Person <|-- Member
+Member <|-- BoardMember
+AAUOC o-- Person
+AAUOC o-- Event
+AAUOC o-- Location
+Person -- Conference
+Member -- Event
+BoardMember -- BoardMeeting
+Location -- Event
 @enduml
